@@ -1,0 +1,30 @@
+
+# Virtual environment
+.venv/
+venv/
+
+# Secret environment files
+.env
+.env.*
+
+# Allow example configuration
+!.env.example
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Testing cache
+.pytest_cache/
+.coverage
+
+# Git files
+.git/
+
+# VS Code settings
+.vscode/
+
+# Operating system files
+.DS_Store
+Thumbs.db

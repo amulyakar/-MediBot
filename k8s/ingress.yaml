@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: medibot-ingress
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: medibot.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: medibot-service
+                port:
+                  number: 8000

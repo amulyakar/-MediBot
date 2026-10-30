@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MediBot - Medical Information Assistant</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🩺 MediBot</h1>
+        <p>Your Medical Information Assistant</p>
+    </header>
+
+    <main>
+
+        <section class="welcome">
+            <h2>How can I help you today?</h2>
+
+            <p>
+                Ask a medical information question.
+                MediBot will research and review the available information.
+            </p>
+        </section>
+
+        <section class="chat-container">
+
+            <label for="question">Enter your question</label>
+
+            <textarea
+                id="question"
+                placeholder="Example: What is the common cold?"
+                rows="4">
+            </textarea>
+
+            <button id="askButton" onclick="askMediBot()">
+                Ask MediBot
+            </button>
+
+            <div id="loading" class="hidden">
+                MediBot is thinking... Please wait.
+            </div>
+
+            <div id="result" class="result hidden">
+
+                <h3>MediBot's Answer</h3>
+
+                <p id="answer"></p>
+
+                <h4>Disclaimer</h4>
+
+                <p id="disclaimer"></p>
+
+            </div>
+
+            <div id="error" class="error hidden"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            MediBot provides educational information only.
+            It is not a substitute for professional medical advice.
+        </p>
+    </footer>
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>

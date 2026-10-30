@@ -1,0 +1,10 @@
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: medibot-config
+data:
+  GROQ_MODEL: "openai/gpt-oss-120b"
+  APP_ENV: "production"
+  HOST: "0.0.0.0"
+  PORT: "8000"

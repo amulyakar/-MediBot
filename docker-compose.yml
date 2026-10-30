@@ -1,0 +1,38 @@
+
+services:
+
+  medibot:
+
+    # Build the Docker image using our Dockerfile
+    build:
+      context: .
+
+    # Name of the running container
+    container_name: medibot-container
+
+    # Map host port 8000 to container port 8000
+    ports:
+      - "8000:8000"
+
+    # Load API configuration from the local .env file
+    env_file:
+      - .env
+
+    # Restart the container if it stops unexpectedly
+    restart: unless-stopped
+
+    # Check whether the backend is responding
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+    # Mount application files for development
+    volumes:
+      - ./app:/app/app
